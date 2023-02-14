@@ -1,8 +1,6 @@
 import kotlin.system.exitProcess
 fun main(){
-    
     var retAnswer = rpsQuestion()
-    println("you entered $retAnswer")
     playGame(retAnswer)
 }
 
@@ -18,11 +16,21 @@ fun rpsQuestion():String{
 }
 
 fun playGame(retAnswer: String){
-    var output = retAnswer
-    println("$output")
+    //var output = retAnswer
+    // println("$retAnswer")
     val optionsArray = arrayOf("Rock", "Paper", "Scissors") 
-    // create random number
-   val randomInt = (0..2).random()
-   println("random number is $randomInt")
-   println("I have chosen ${optionsArray[randomInt]}")
+    val randomInt = (0..2).random()
+   println("I have chosen now it's your turn. Do you want 'rock', 'paper' or 'scissors'")
+   println("Enter r, p or s")
+   var selection = readln()
+   if (selection == "r") {
+    selection = "rock"
+   } else if (selection == "p"){
+    selection = "paper"
+   } else if (selection == "s"){
+    selection = "scissors"
+   } else{
+    println("Sorry unrecognised input")
+   }
+   println("You chose $selection and I chose ${optionsArray[randomInt]}")
 }
