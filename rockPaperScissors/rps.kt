@@ -11,6 +11,7 @@ fun rpsQuestion():String{
     println("Enter y or n ")
     var answer = readln()
     if (answer == "n"){
+        println("See ya later!")
         exitProcess(0)
     } else
     return answer
@@ -19,6 +20,9 @@ fun rpsQuestion():String{
 fun playGame(retAnswer: String){
     var output = retAnswer
     println("$output")
-    optionsArray = arrayOf("Rock", "Paper", "Scissors") 
+    val optionsArray = arrayOf("Rock", "Paper", "Scissors") 
     // create random number
+   val randomInt = (0..2).random()
+   println("random number is $randomInt")
+   println("I have chosen ${optionsArray[randomInt]}")
 }
